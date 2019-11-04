@@ -7,10 +7,10 @@ import java.io.IOException;
 public class Application {
 
     public static void main(String[] args) throws IOException {
-        DuplicateRemover dr = new DuplicateRemover();
+        DuplicateCounter dc = new DuplicateCounter();
 
-        File dataFile = new File("problem1.txt");
-        File outputFile = new File("unique_words.txt");
+        File dataFile = new File("problem2.txt");
+        File outputFile = new File("unique_word_counts.txt");
         boolean fileExists = outputFile.exists();
 
         if (fileExists == false){
@@ -19,7 +19,7 @@ public class Application {
             System.out.println("Directory created? " + flag);
         }
 
-        dr.remove(dataFile);
-        dr.write(outputFile);
+        dc.count(dataFile);
+        dc.write(outputFile);
     }
 }
